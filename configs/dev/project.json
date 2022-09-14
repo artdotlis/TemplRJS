@@ -1,0 +1,22 @@
+{
+    "conf": "configs",
+    "copy": {
+        "assets": {
+            "main": {
+                "from": "./assets",
+                "to": "assets/"
+            },
+            "config": {
+                "from": "./configs/src",
+                "to": "configs/"
+            }
+        },
+        "plugins": {
+            "katex": {
+                "from": "./node_modules/katex",
+                "to": "js/extra/katex/",
+                "info": { "minimized": true }
+            }
+        }
+    }
+}

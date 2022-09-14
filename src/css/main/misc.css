@@ -1,0 +1,10 @@
+/*
+    Search cancel button, removed
+    ----------------------------------------------------------------------------
+*/
+::-webkit-search-cancel-button {
+    position: relative;
+    -webkit-appearance: none;
+}
+
+/*-------------------------------------------*/

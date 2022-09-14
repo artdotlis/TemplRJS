@@ -1,0 +1,9 @@
+{
+  "labels": ["T 1", "T 2", "T 3"],
+  "datasets": [{
+    "label": "Template",
+    "data": [12, 43, 22],
+    "fill": false,
+    "borderColor": "rgb(153,0,0)"
+  }]
+}

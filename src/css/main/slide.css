@@ -1,0 +1,101 @@
+/*
+    footer
+    ----------------------------------------------------------------------------
+*/
+
+.text-footer {
+    width: 66%;
+    position: absolute;
+    bottom: 4%;
+    left: 14%;
+    right: 20%;
+    border-top: 2px solid var(--background-very-dark);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--background-dark);
+    font-size: 24px;
+}
+
+.footer-logo {
+    position: absolute;
+}
+
+.footer-logo-left {
+    bottom: 2%;
+    left: 2%;
+    right: 90%;
+}
+
+.footer-logo-right {
+    bottom: 2%;
+    left: 84%;
+    right: 8%;
+}
+
+.footer-logo img {
+    padding: 0;
+    margin: 0;
+}
+
+/*-------------------------------------------*/
+
+/*
+    header slides
+    ----------------------------------------------------------------------------
+*/
+
+.header ol,
+.header dl,
+.header ul {
+    display: block;
+}
+
+.header > p,
+.header > ol,
+.header > ul {
+    text-align: left;
+    padding-left: 32px;
+}
+
+.header > h1,
+.header > h2,
+.header > h3,
+.header > h4,
+.header > h5,
+.header > h6 {
+    background: var(--header-color);
+    border-bottom: 0.05em solid var(--r-link-color);
+    padding: 20px 0 12px 32px;
+    text-align: left;
+    margin-top: 24px;
+    margin-bottom: 18px;
+}
+
+/*-------------------------------------------*/
+
+/*
+    first slide
+    ----------------------------------------------------------------------------
+*/
+
+#first-slide > h1,
+#first-slide > h2,
+#first-slide > h3,
+#first-slide > h4,
+#first-slide > h5,
+#first-slide > h6 {
+    background: var(--header-color);
+    border-bottom: 0.05em solid var(--r-link-color);
+    padding: 20px 0 0px 22px;
+    margin-top: 24px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#first-slide > p:nth-child(2) {
+    text-align: center;
+    padding-top: 24px;
+    margin-top: 0px;
+}
+
+/*-------------------------------------------*/

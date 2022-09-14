@@ -1,0 +1,44 @@
+/*!
+* reveal.js 4.3.1 theme 
+* Based on white theme created by Hakim El Hattab, http://hakim.se
+* See https://raw.githubusercontent.com/hakimel/reveal.js/master/css/theme/source/white.scss
+*/
+
+// Default mixins and settings -----------------
+@import './reveal_js/mixins';
+@import './reveal_js/settings';
+// ---------------------------------------------
+
+// Override theme settings (see ./reveal_js/settings.scss)
+$backgroundColor: #fff;
+$mainColor: #222;
+$headingColor: #222;
+
+$mainFontSize: 42px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #990000;
+$linkColorHover: lighten($linkColor, 15%);
+$selectionBackgroundColor: $linkColor;
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1em;
+
+$headingTextTransform: normal;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+// custom vars
+
+$backgroundHeader: #e7e7e7;
+
+// Theme template ------------------------------
+@import './reveal_js/theme';
+// ---------------------------------------------

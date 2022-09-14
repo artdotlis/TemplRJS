@@ -1,0 +1,9 @@
+*
+
+!/.husky
+!/assets
+!/configs
+!/src
+
+!/package.json
+!/package-lock.json

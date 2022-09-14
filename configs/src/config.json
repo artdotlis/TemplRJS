@@ -1,0 +1,35 @@
+{
+    "revealJs": {
+        "defaultTiming": null,
+        "totalTime": 1200
+    },
+    "slides": [
+        {
+            "md": "/slides/1_main.md",
+            "dataSeparator": "^\n\n\n",
+            "dataSeparatorVertical": "^\n\n",
+            "dataSeparatorNotes": "^Note:"
+        }
+    ],
+    "charts": [
+        {
+            "id": "main_chart",
+            "type": "line",
+            "data": "/charts/1_main.json",
+            "options": null
+        }
+    ],
+    "citeJs": {
+        "refsPerSection": [5],
+        "reference": "/bib/pres_bib.bib",
+        "language": "en-US",
+        "style": "ieee",
+        "template": "/csl/ieee.csl",
+        "local": "/csl/locales_en_US.xml"
+    },
+    "footer": {
+        "text": "footer template",
+        "logoLeft": "",
+        "logoRight": ""
+    }
+}

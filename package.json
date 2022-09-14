@@ -1,0 +1,73 @@
+{
+    "name": "templrjs",
+    "version": "0.1.0",
+    "description": "A template for a reveal.js presentation",
+    "main": "public/html/index.html",
+    "engines": {
+        "node": "^18.1",
+        "npm": "^8.8"
+    },
+    "author": {
+        "name": "Artur Lissin",
+        "email": "artdotlis@pm.me"
+    },
+    "license": "The Unlicense",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:artdotlis/templrjs.git"
+    },
+    "keywords": [
+        "reveal.js",
+        "template"
+    ],
+    "dependencies": {
+        "@citation-js/core": "^0.6",
+        "@citation-js/plugin-bibtex": "^0.6",
+        "@citation-js/plugin-csl": "^0.6",
+        "@fortawesome/fontawesome-free": "^6.2",
+        "@fortawesome/fontawesome-svg-core": "^6.2",
+        "@fortawesome/free-solid-svg-icons": "^6.2",
+        "cash-dom": "^8.1",
+        "chart.js": "^3.9",
+        "katex": "^0.16",
+        "reveal.js": "^4.3"
+    },
+    "devDependencies": {
+        "@types/node": "^14.18",
+        "@typescript-eslint/eslint-plugin": "^5.37",
+        "@typescript-eslint/parser": "^5.37",
+        "copy-webpack-plugin": "^11.0",
+        "css-loader": "^6.7",
+        "eslint": "^8.23",
+        "eslint-config-airbnb-base": "^15.0",
+        "eslint-config-airbnb-typescript": "^17.0",
+        "eslint-plugin-import": "^2.26",
+        "eslint-config-prettier": "^8.5",
+        "html-webpack-plugin": "^5.5",
+        "husky": "^8.0",
+        "lint-staged": "^13.0",
+        "mini-css-extract-plugin": "^2.6",
+        "prettier": "^2.7",
+        "sass": "^1.54",
+        "sass-loader": "^13.0",
+        "tslint-config-prettier": "^1.18",
+        "typescript": "^4.8",
+        "webpack": "^5.74",
+        "webpack-cli": "^4.10"
+    },
+    "scripts": {
+        "prepare": "husky install .husky",
+        "build:ts": "rm -rf src/js/* && tsc -p configs/dev/tsconfig.json --pretty",
+        "build:wp": "rm -rf public/* && webpack --config configs/dev/webpack-config.js",
+        "build": "npm run build:ts && npm run build:wp",
+        "lint": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "eslint -c configs/dev/eslintrc.json --fix"
+        ],
+        "*.{js,jsx,ts,tsx,html,css,md,json}": [
+            "prettier --config configs/dev/prettierrc.js --ignore-path configs/dev/prettierignore --write"
+        ]
+    }
+}

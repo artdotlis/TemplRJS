@@ -1,0 +1,22 @@
+/*
+    MAIN Reference
+    -------------------------------------------
+*/
+
+div.reference-sub-container {
+    font-size: 24px;
+    overflow: hidden;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 20px 10px;
+    justify-items: stretch;
+    grid-template-columns: 60px auto;
+    width: 98%;
+}
+
+div.reference-sub-container div.csl-entry {
+    width: 100%;
+    text-align: left;
+}
+
+/*-------------------------------------------*/
