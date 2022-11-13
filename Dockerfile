@@ -6,7 +6,7 @@ COPY . /tmp/pres
 
 WORKDIR /tmp/pres
 
-RUN npm install --omit-dev && npm run build
+RUN npm install --omit=dev && npm run build
 
 RUN mkdir -p /var/www && cp -r public/* /var/www
 
