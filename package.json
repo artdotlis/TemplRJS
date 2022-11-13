@@ -57,7 +57,7 @@
         "tslint-config-prettier": "^1.18"
     },
     "scripts": {
-        "postinstall": "if [ $NODE_ENV != 'production' ]; then npm run hook; fi",
+        "postinstall": "if [ \"$NODE_ENV\" != 'production' ]; then npm run hook; fi",
         "hook": "husky install .husky",
         "build:ts": "rm -rf src/js/* && tsc -p configs/dev/tsconfig.json --pretty",
         "build:wp": "rm -rf public/* && webpack --config configs/dev/webpack-config.js",
