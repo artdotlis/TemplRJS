@@ -17,8 +17,8 @@ A template builder for a [reveal.js](https://revealjs.com/) presentation.
 
 ## Requirements
 
--   node: ~18.1
--   npm: ~8.8
+-   node: ~18.12
+-   npm: ~9.1
 
 ---
 
