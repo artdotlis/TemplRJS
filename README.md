@@ -1,6 +1,6 @@
 # TemplRJS
 
-[![release: 0.1.0](https://img.shields.io/badge/rel-0.1.0-blue.svg?style=flat-square)](https://gitlab.int.dsmz.de/artur.lissin/templrjs)
+[![release: 0.1.0](https://img.shields.io/badge/rel-0.1.0-blue.svg?style=flat-square)](https://github.com/artdotlis/TemplRJS)
 [![The Unlicense](https://img.shields.io/badge/License-Unlicense-brightgreen.svg?style=flat-square)](https://choosealicense.com/licenses/unlicense/)
 [![Husky](https://img.shields.io/badge/Husky-enabled-brightgreen?style=flat-square)](https://github.com/typicode/husky)
 [![Prettier Enabled](https://img.shields.io/badge/Prettier-enabled-brightgreen.svg?style=flat-square)](https://github.com/prettier/prettier)
