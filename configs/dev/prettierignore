@@ -1,6 +1,0 @@
-# Ignore directories/files:
-node_modules
-package-lock.json
-src/js/*
-public
-assets

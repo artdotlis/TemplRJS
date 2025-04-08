@@ -1,0 +1,27 @@
+services:
+    nginx:
+        environment:
+            - NODE_HOST=dev
+        depends_on:
+            - dev
+    dev:
+        user: devu
+        env_file:
+            - .env
+        environment:
+            - NODE_HOST=dev
+        build:
+            context: .
+            dockerfile: .devcontainer/dev.Dockerfile
+            args:
+                USERNAME: devu
+                USER_UID: 1001
+                USER_GID: 1001
+                WORK_DIR: /workspace
+                BIN_DEPLOY_PREP: ${BIN_DEPLOY_PREP}
+                BIN_DEPLOY_REQ: ${BIN_DEPLOY_REQ}
+        volumes:
+            - .:/workspace
+            - ~/.config/git/config:/etc/gitconfig
+        networks:
+            - templrjs

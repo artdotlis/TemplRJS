@@ -1,0 +1,47 @@
+/*!
+* reveal.js 5.2.1 theme 
+* Based on white theme created by Hakim El Hattab, http://hakim.se
+* See https://raw.githubusercontent.com/hakimel/reveal.js/master/css/theme/source/white.scss
+*/
+
+// Default mixins and settings -----------------
+@use 'sass:color';
+@use 'sass:meta';
+@use 'reveal_js/mixins';
+@use 'reveal_js/settings';
+// ---------------------------------------------
+
+// Override theme settings (see ./reveal_js/settings.scss)
+settings.$backgroundColor: #fff;
+settings.$mainColor: #222;
+settings.$headingColor: #222;
+
+settings.$mainFontSize: 42px;
+settings.$mainFont: 'Rubik Variable';
+settings.$headingFont: 'Rubik Variable';
+settings.$headingTextShadow: none;
+settings.$headingLetterSpacing: normal;
+settings.$headingTextTransform: uppercase;
+settings.$headingFontWeight: 600;
+settings.$linkColor: #990000;
+settings.$linkColorHover: color.scale(settings.$linkColor, $lightness: 20%);
+settings.$selectionBackgroundColor: settings.$linkColor;
+
+settings.$heading1Size: 2.5em;
+settings.$heading2Size: 1.6em;
+settings.$heading3Size: 1.3em;
+settings.$heading4Size: 1em;
+
+settings.$headingTextTransform: normal;
+
+// Change text colors against dark slide backgrounds
+@include mixins.dark-bg-text-color(#fff);
+
+// custom vars
+
+$backgroundHeader: #e7e7e7;
+
+// Theme template ------------------------------
+@include meta.load-css('reveal_js/theme');
+@include meta.load-css('reveal_js/exposer');
+// ---------------------------------------------
