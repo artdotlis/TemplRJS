@@ -39,5 +39,5 @@ docker compose up -d
 ```
 
 The presentation is available at
-`http://localhost:9012` by default. The port may vary based on your `.env` file's
+`http://localhost:9080` by default. The port may vary based on your `.env` file's
 `NGINX_PORT` setting.
