@@ -1,6 +1,6 @@
 {
     "name": "TemplRJS",
-    "version": "2025.03.0",
+    "version": "2025.04.0",
     "description": "Initial bare-bone full-stack nuxt project.",
     "private": true,
     "workspaces": [

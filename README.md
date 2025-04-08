@@ -1,6 +1,6 @@
 # TemplRJS
 
-[![release: 0.2.0](https://img.shields.io/badge/rel-0.2.0-blue.svg?style=flat-square)](https://github.com/artdotlis/TemplRJS)
+[![release: 2025.04.0](https://img.shields.io/badge/rel-2025.04.0-blue.svg?style=flat-square)](https://github.com/artdotlis/TemplRJS)
 [![MIT LICENSE](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square)](https://choosealicense.com/licenses/mit/)
 [![reveal.js](https://img.shields.io/badge/reveal.js-enabled-brightgreen?style=flat-square)](https://revealjs.com/)
 
