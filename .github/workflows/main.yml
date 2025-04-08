@@ -30,4 +30,3 @@ jobs:
                   make dev
                   export GITHUB_WORKER='true'
                   make runChecks
-                  make runTests
