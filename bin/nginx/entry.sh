@@ -14,7 +14,4 @@ done
 echo "}" >>"$CONF"
 echo "running docker $(ls -al /docker-entrypoint.sh)"
 
-echo "Adding tmp cache folder"
-mkdir -p "/tmp/ipx_cache"
-
 sh "/docker-entrypoint.sh" nginx -g "daemon off;"
