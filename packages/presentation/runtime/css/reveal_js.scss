@@ -37,11 +37,12 @@ settings.$headingTextTransform: normal;
 // Change text colors against dark slide backgrounds
 @include mixins.dark-bg-text-color(#fff);
 
-// custom vars
-
-$backgroundHeader: #e7e7e7;
-
 // Theme template ------------------------------
 @include meta.load-css('reveal_js/theme');
-@include meta.load-css('reveal_js/exposer');
+@include meta.load-css(
+    'reveal_js/exposer',
+    $with: (
+        "backgroundHeader":  #e7e7e7
+    )
+);
 // ---------------------------------------------

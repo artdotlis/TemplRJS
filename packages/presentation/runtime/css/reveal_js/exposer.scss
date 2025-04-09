@@ -10,6 +10,10 @@
 @use 'sass:color';
 @use 'settings';
 
+/* custom variables */
+$backgroundHeader:  #e7e7e7 !default; 
+/* ---- */
+
 :root {
     --r-background-color: #{settings.$backgroundColor};
     --r-main-font: #{settings.$mainFont};
@@ -37,4 +41,7 @@
     --r-selection-color: #{settings.$selectionColor};
     --r-overlay-element-bg-color: #{settings.$overlayElementBgColor};
     --r-overlay-element-fg-color: #{settings.$overlayElementFgColor};
+    --header-color: #{$backgroundHeader};
+    --background-dark: #{color.scale($backgroundHeader, $lightness:  -20%)};
+    --background-very-dark: #{color.scale($backgroundHeader, $lightness:  -30%)};
 }
