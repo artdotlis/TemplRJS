@@ -38,7 +38,6 @@ function getEnv(): string {
 const ENV = loadEnv(getEnv(), LOCAL_DIR, '') as {
     [key: string]: string;
     APP_PRES: string;
-    APP_PRES_SRC_ROOT: string;
     CACHE_PRES_VITE: string;
 };
 
@@ -54,7 +53,6 @@ function getAppMain(): string {
 
 const APP_DIR = getAppMain();
 const CACHE_DIR = Path.resolve(ROOT, ENV.CACHE_PRES_VITE);
-const SRC_DIR = Path.resolve(LOCAL_DIR, ENV.APP_PRES_SRC_ROOT);
 
 function copyFromTargets(): void {
     const targets = createCopyPath();
@@ -70,7 +68,7 @@ function createBuild(): UserConfig {
     return {
         build: {
             write: true,
-            outDir: `../../../${ENV.APP_PRES}`,
+            outDir: `../../${ENV.APP_PRES}`,
             assetsDir: './assets',
             assetsInlineLimit: 8 * 1024,
             cssCodeSplit: true,
@@ -93,7 +91,7 @@ function getNginxPort(): number {
 
 function createShared(): UserConfig {
     return {
-        root: SRC_DIR,
+        root: './',
         envDir: LOCAL_DIR,
         base: '/',
         appType: 'spa' as const,
@@ -164,6 +162,15 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         console.log(preview);
     }
     const config: UserConfig = {
+        plugins: [
+            {
+                name: 'full-reload',
+                handleHotUpdate: ({ server }) => {
+                    server.ws.send({ type: 'full-reload' });
+                    return [];
+                },
+            },
+        ],
         ...createShared(),
         ...createBuild(),
         ...server,
