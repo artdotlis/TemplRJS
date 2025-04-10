@@ -166,7 +166,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             {
                 name: 'full-reload',
                 handleHotUpdate: ({ server }) => {
-                    server.ws.send({ type: 'full-reload' });
+                    server.restart();
                     return [];
                 },
             },
