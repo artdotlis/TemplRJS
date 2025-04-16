@@ -13,8 +13,6 @@ services:
         volumes:
             - ./${CONFIG_WEB}:/etc/nginx/templates
             - ./${BIN_NGINX_ENTRY}:/entry.sh
-        depends_on:
-            - app
     app:
         env_file:
             - .env
@@ -36,6 +34,8 @@ services:
                 PM2_WORKER: ${PM2_WORKER}
         networks:
             - templrjs
+        expose:
+            - '${NODE_PORT}'
 networks:
     templrjs:
         name: templrjs
