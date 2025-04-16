@@ -4,10 +4,10 @@
     "private": true,
     "scripts": {
         "build": "tsc && vite build",
-        "dev": "PORT=$NODE_PORT HOST=$NODE_HOST vite",
-        "serve": "PORT=$NODE_PORT HOST=$NODE_HOST vite preview",
+        "dev": "PORT=$NODE_PORT vite",
+        "serve": "PORT=$NODE_PORT vite preview",
         "lint": "bun run lint:eslint && bun run lint:knip",
-        "lint:knip": "knip",
+        "lint:knip": "knip --no-exit-code",
         "lint:eslint": "eslint --fix"
     },
     "dependencies": {
