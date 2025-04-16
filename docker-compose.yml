@@ -17,8 +17,6 @@ services:
         env_file:
             - .env
             - packages/presentation/.env
-        environment:
-            - NODE_HOST=app
         build:
             context: .
             dockerfile: ./Dockerfile
