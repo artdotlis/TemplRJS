@@ -2,8 +2,6 @@ services:
     nginx:
         environment:
             - NODE_HOST=dev
-        depends_on:
-            - dev
     dev:
         user: devu
         env_file:
@@ -25,3 +23,5 @@ services:
             - ~/.config/git/config:/etc/gitconfig
         networks:
             - templrjs
+        expose:
+            - '${NODE_PORT}'
