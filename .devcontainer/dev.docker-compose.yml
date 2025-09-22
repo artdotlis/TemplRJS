@@ -16,6 +16,7 @@ services:
                 WORK_DIR: /workspace
                 BIN_DEPLOY_PREP: ${BIN_DEPLOY_PREP}
                 BIN_DEPLOY_REQ: ${BIN_DEPLOY_REQ}
+                BUN_BIN: ${BUN_BIN_R}
         volumes:
             - .:/workspace
             - ~/.config/git/config:/etc/gitconfig

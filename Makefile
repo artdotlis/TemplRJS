@@ -1,3 +1,9 @@
+ifeq ($(CONTAINER),container)
+$(info Makefile enabled, proceeding ...)
+else	
+$(error Error: Makefile disabled, exiting ...)
+endif
+
 ROOT_MAKEFILE:=$(abspath $(patsubst %/, %, $(dir $(abspath $(lastword $(MAKEFILE_LIST))))))
 
 include $(ROOT_MAKEFILE)/.env
@@ -5,8 +11,8 @@ include $(PRES_ENV)
 
 export
 
-BUN_DIR=$(HOME)/.bun
-BUN_BIN=$(BUN_DIR)/bin
+BUN_DIR=$(HOME)/$(BUN_DIR_R)
+BUN_BIN=$(HOME)/$(BUN_BIN_R)
 BUN=$(BUN_BIN)/bun
 
 export PATH:=$(PATH):$(BUN_BIN)
