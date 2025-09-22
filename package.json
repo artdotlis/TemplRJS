@@ -1,6 +1,6 @@
 {
     "name": "TemplRJS",
-    "version": "2025.04.0",
+    "version": "2025.09.0",
     "description": "Initial bare-bone full-stack nuxt project.",
     "private": true,
     "workspaces": [
@@ -20,17 +20,17 @@
         "template"
     ],
     "dependencies": {
-        "typescript": "^5.8.3"
+        "typescript": "^5.9.2"
     },
     "devDependencies": {
-        "@types/bun": "^1.2.8",
-        "@types/node": "^22.14.0",
-        "commitizen": "^4.3.1",
-        "cz-conventional-changelog": "^3.3.0",
-        "husky": "^9.1.7",
-        "lint-staged": "^15.5.0",
-        "prettier": "^3.5.3",
-        "shellcheck": "^3.1.0"
+        "@types/bun": "1.2.22",
+        "@types/node": "22.14.0",
+        "commitizen": "4.3.1",
+        "cz-conventional-changelog": "3.3.0",
+        "husky": "9.1.7",
+        "lint-staged": "15.5.2",
+        "prettier": "3.6.2",
+        "shellcheck": "3.1.0"
     },
     "scripts": {
         "build:pres": "cd $PRES_PKG && bun run build",
