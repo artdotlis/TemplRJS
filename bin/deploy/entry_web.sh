@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "starting server - in /var/www/$APP_PRES_ROOT"
 cd "/var/www/$APP_PRES_ROOT" || exit 1

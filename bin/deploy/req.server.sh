@@ -5,11 +5,11 @@ apk add --no-cache procps-ng curl bash
 echo "installing bun -> /opt/bun"
 apk add --no-cache unzip
 if [ ! -d "/opt/bun" ]; then
-    echo "installing bun"
+    echo "Installing Bun in /opt/bun..."
     curl -fsSl https://bun.sh/install | bash -s "bun-$BUN_VER"
     mv "$HOME/.bun" /opt/bun
-    chmod 755 -R /opt/bun
-    ln -s "/opt/bun/bin/bun" "/usr/bin/bun"
+    chmod -R 755 /opt/bun
+    ln -s /opt/bun/bin/bun /usr/bin/bun
 fi
 echo "installing pm2"
 apk add --no-cache build-base make
