@@ -1,3 +1,5 @@
 #!/bin/sh
+CUR_DIR="$(dirname "$(realpath "$0")")"
 eval make dev
-exec </dev/tty && bunx cz --hook || true
+. "$CUR_DIR/../.env"
+exec </dev/tty && PATH=$PATH:$HOME/$BUN_BIN_R bun x cz --hook || true
