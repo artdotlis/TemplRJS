@@ -1,6 +1,6 @@
 ARG NODE_VER="22"
 
-FROM docker.io/rockylinux:9 AS appbuilder
+FROM docker.io/almalinux:9 AS appbuilder
 
 ARG BIN_DEPLOY
 ARG CONTAINER="container"
@@ -12,10 +12,10 @@ WORKDIR /tmp/app
 RUN dnf install -y bash
 RUN bash "./${BIN_DEPLOY}"
 
-FROM docker.io/rockylinux:9 AS release
+FROM docker.io/almalinux:9 AS release
 
 ARG USERNAME=runner
-ARG USER_UID=1000
+ARG USER_UID=1001
 ARG USER_GID=${USER_UID}
 ARG HOME_MAIN="/home/${USERNAME}"
 
@@ -31,6 +31,7 @@ RUN mkdir -p ${HOME_MAIN} \
 ARG DOCKER_ENV_DIR
 ARG BUN_VER
 ARG BIN_DEPLOY_REQ_SERVER
+ARG NODE_VER
 
 COPY ./${BIN_DEPLOY_REQ_SERVER} /install.sh
 RUN bash /install.sh && rm /install.sh

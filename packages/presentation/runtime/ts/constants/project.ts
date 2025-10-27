@@ -17,7 +17,7 @@ const PROJECT: ProjectConfCon = {
     },
     plugins: {
         katex: {
-            from: '../../node_modules/katex',
+            from: 'node_modules/katex',
             to: 'js/extra/katex/',
         },
     },

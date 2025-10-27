@@ -4,7 +4,7 @@ import mergeURIs from '../../functions/files/fix_uri';
 async function initSlides(
     slCont: HTMLElement,
     mdSlides: SlideConf[],
-    root: string,
+    root: string
 ): Promise<void> {
     for (const slide of mdSlides) {
         const section = document.createElement('section');

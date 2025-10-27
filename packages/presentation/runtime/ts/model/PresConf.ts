@@ -22,12 +22,12 @@ class PresConf {
 
     public async init(): Promise<void> {
         this.conf = DeckConfig.parse(
-            JSON.parse(await readTextFile(mergeURIs([CONFIG_PATH, 'deck.config.json']))),
+            JSON.parse(await readTextFile(mergeURIs([CONFIG_PATH, 'deck.config.json'])))
         );
         this.rjConf = RevealJSConfig.parse(
             JSON.parse(
-                await readTextFile(mergeURIs([CONFIG_PATH, 'revealjs.config.json'])),
-            ),
+                await readTextFile(mergeURIs([CONFIG_PATH, 'revealjs.config.json']))
+            )
         );
     }
 

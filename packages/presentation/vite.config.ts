@@ -58,7 +58,10 @@ function copyFromTargets(): void {
     const targets = createCopyPath();
     fs.mkdirSync(APP_DIR, { recursive: true });
     for (const path of targets) {
-        fs.cpSync(Path.resolve(LOCAL_DIR, path.from), Path.resolve(APP_DIR, path.to), {
+        const realSrc = fs.lstatSync(path.from).isSymbolicLink()
+            ? fs.realpathSync(path.from)
+            : path.from;
+        fs.cpSync(Path.resolve(LOCAL_DIR, realSrc), Path.resolve(APP_DIR, path.to), {
             recursive: true,
         });
     }

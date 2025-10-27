@@ -7,7 +7,7 @@ ROOT="$(dirname "$(realpath "$0")")/../.."
 ROOT_ENV="$ROOT/.env"
 ENV_FILES=("$ROOT_ENV" "$PRES_ENV")
 
-ALL_ENV=("MAKEFILE_LIST" "HOME" "PATH" "APP_PRES_SHADOW")
+ALL_ENV=("MAKEFILE_LIST" "HOME" "PATH" "APP_PRES_SHADOW" "COMMIT_MSG_FILE" "MAKE")
 
 check_env_uniqueness() {
     cmd="$(awk 'match($0, /^.*=/) {print substr($0, RSTART, RLENGTH-1)}' "$1")"
@@ -51,13 +51,13 @@ check_name_occurrence() {
     if [[ "$(grep -Rnw "$ROOT/.devcontainer" -e "$docker_reg" | wc -l)" -gt 0 ]]; then
         return 0
     fi
-    if [[ "$(grep --exclude-dir=src -Rnw "$PKGS" -e "$norm_reg" | wc -l)" -gt 0 ]]; then
+    if [[ "$(grep --exclude-dir={src,bin,node_modules} -Rnw "$PKGS" -e "$norm_reg" | wc -l)" -gt 0 ]]; then
         return 0
     fi
     if [[ "$2" = 1 ]]; then
         return 1
     fi
-    if [[ "$(grep --exclude-dir=src --exclude-dir=bin -Rnw "$PKGS" -e "$1" | wc -l)" -gt 0 ]]; then
+    if [[ "$(grep --exclude-dir={src,bin,node_modules} -Rnw "$PKGS" -e "$1" | wc -l)" -gt 0 ]]; then
         return 0
     fi
     return 1

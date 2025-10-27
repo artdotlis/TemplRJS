@@ -39,10 +39,5 @@ settings.$headingTextTransform: normal;
 
 // Theme template ------------------------------
 @include meta.load-css('reveal_js/theme');
-@include meta.load-css(
-    'reveal_js/exposer',
-    $with: (
-        "backgroundHeader":  #e7e7e7
-    )
-);
+@include meta.load-css('reveal_js/exposer', $with: ('backgroundHeader': #e7e7e7));
 // ---------------------------------------------

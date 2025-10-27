@@ -1,5 +1,6 @@
-#!/bin/sh
-CUR_DIR="$(dirname "$(realpath "$0")")"
-eval make dev
-. "$CUR_DIR/../.env"
-exec </dev/tty && PATH=$PATH:$HOME/$BUN_BIN_R bun x cz --hook || true
+#!/bin/bash
+COMMIT_MSG_FILE="$1"
+
+if [[ "$2" == "" ]]; then
+    exec </dev/tty && make COMMIT_MSG_FILE="$COMMIT_MSG_FILE" runMessage
+fi

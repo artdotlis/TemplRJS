@@ -7,8 +7,7 @@ function finishSync(loading: HTMLElement, interval: NodeJS.Timeout, rvjs: Reveal
     rvjs.sync();
     try {
         rvjs.slide(0, 0, 0);
-    }
-    catch (err: unknown) {
+    } catch (err: unknown) {
         console.error('slide finished moving', err);
     }
     console.log('synced reveal.js');
@@ -18,13 +17,12 @@ function finishSync(loading: HTMLElement, interval: NodeJS.Timeout, rvjs: Reveal
 function syncPres(loading: HTMLElement): void {
     const interval = setInterval(() => {
         if (
-            window.RevealJs === undefined
-            || window.RefMap === undefined
-            || window.Slides === undefined
+            window.RevealJs === undefined ||
+            window.RefMap === undefined ||
+            window.Slides === undefined
         ) {
             console.log('waiting for reveal.js to load!');
-        }
-        else {
+        } else {
             finishSync(loading, interval, window.RevealJs);
         }
     }, 2000);
@@ -35,8 +33,7 @@ function initPres(root: string, fLogoL: string, fLogoR: string, fText: string): 
     const interval = setInterval(() => {
         if (window.RevealJs === undefined || window.Slides === undefined) {
             console.log('waiting for slides to load!');
-        }
-        else {
+        } else {
             window.RevealJs.initialize()
                 .then(() => {
                     addFooter(root, fLogoL, fLogoR, fText);

@@ -23,8 +23,8 @@ class ChartsJs {
                     conf.id,
                     conf.type,
                     getChartData(conf.id, this.root, conf.data),
-                    conf.options,
-                ),
+                    conf.options
+                )
             );
         }
         return con;

@@ -28,7 +28,7 @@ class RevealJsPres {
         revealJsDef: RevealJsDefConf,
         plugins: PluginRJSCon,
         footer: FooterConf,
-        root: string,
+        root: string
     ) {
         this.root = root;
         const load = document.getElementById(IdHtml.loading);
@@ -56,7 +56,7 @@ class RevealJsPres {
             this.root,
             this.footer.logoLeft,
             this.footer.logoRight,
-            this.footer.text,
+            this.footer.text
         );
     }
 }
