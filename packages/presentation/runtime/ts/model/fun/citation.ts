@@ -34,7 +34,7 @@ async function initCitation(
     style: string,
     lang: string,
     template: string,
-    local: string,
+    local: string
 ): Promise<void> {
     // eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-member-access
     await configureCite(style, template, plugins.config.get('@csl').templates as Addable);

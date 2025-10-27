@@ -11,7 +11,7 @@
 @use 'settings';
 
 /* custom variables */
-$backgroundHeader:  #e7e7e7 !default; 
+$backgroundHeader: #e7e7e7 !default;
 /* ---- */
 
 :root {
@@ -42,6 +42,6 @@ $backgroundHeader:  #e7e7e7 !default;
     --r-overlay-element-bg-color: #{settings.$overlayElementBgColor};
     --r-overlay-element-fg-color: #{settings.$overlayElementFgColor};
     --header-color: #{$backgroundHeader};
-    --background-dark: #{color.scale($backgroundHeader, $lightness:  -20%)};
-    --background-very-dark: #{color.scale($backgroundHeader, $lightness:  -30%)};
+    --background-dark: #{color.scale($backgroundHeader, $lightness: -20%)};
+    --background-very-dark: #{color.scale($backgroundHeader, $lightness: -30%)};
 }

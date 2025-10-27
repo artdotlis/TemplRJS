@@ -1,0 +1,7 @@
+telemetry = false
+[install]
+exact = true
+frozenLockfile = true
+minimumReleaseAge = 259200
+[install.lockfile]
+save = false

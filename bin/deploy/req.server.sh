@@ -1,9 +1,30 @@
-#!/bin/sh
+#!/bin/bash
 
-echo "installing ps"
-apk add --no-cache procps-ng curl bash
-echo "installing bun -> /opt/bun"
-apk add --no-cache unzip
+echo "Installing ps (procps), curl, bash..."
+dnf install -y procps-ng curl bash --allowerasing
+
+echo "Installing unzip..."
+dnf install -y unzip
+
+echo "Installing pm2 (requires build tools)..."
+dnf groupinstall -y "Development Tools"
+dnf install -y gcc-c++ make python3
+
+# Install Node.js & npm if not already present
+if ! command -v node &> /dev/null; then
+    # Reset and enable the desired module stream
+    dnf module reset -y nodejs
+fi
+
+echo "Installing Node.js v$NODE_VER..."    
+dnf module enable -y nodejs:"$NODE_VER"    
+# Install Node.js and npm
+dnf install -y nodejs npm
+
+# Install pm2 and node-gyp
+npm i -g npm node-gyp pm2
+
+# Install Bun (requires $BUN_VER to be set)
 if [ ! -d "/opt/bun" ]; then
     echo "Installing Bun in /opt/bun..."
     curl -fsSl https://bun.sh/install | bash -s "bun-$BUN_VER"
@@ -11,9 +32,11 @@ if [ ! -d "/opt/bun" ]; then
     chmod -R 755 /opt/bun
     ln -s /opt/bun/bin/bun /usr/bin/bun
 fi
-echo "installing pm2"
-apk add --no-cache build-base make
-npm i -g npm
-npm i -g pm2
 
-apk del unzip build-base make curl bash
+# Install OpenSSL (for nuxt-auth-utils or others)
+dnf install -y openssl
+
+# Optional cleanup to reduce image size (comment this out if tools are still needed)
+echo "Cleaning up..."
+dnf remove -y unzip gcc-c++ make
+dnf autoremove -y

@@ -42,7 +42,7 @@ class IndCtrl {
             this.confPres.revealDefJs,
             plCon,
             this.confPres.footer,
-            this.assetsRoot,
+            this.assetsRoot
         );
         this.refPres = new RefPres(this.confPres.citeJs, this.assetsRoot);
     }

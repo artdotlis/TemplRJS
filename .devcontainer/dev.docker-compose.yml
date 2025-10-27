@@ -1,7 +1,7 @@
 services:
     nginx:
         environment:
-            - NODE_HOST=dev
+            NODE_HOST: dev
     dev:
         user: devu
         env_file:
@@ -16,13 +16,20 @@ services:
                 WORK_DIR: /workspace
                 BIN_DEPLOY_PREP: ${BIN_DEPLOY_PREP}
                 BIN_DEPLOY_REQ: ${BIN_DEPLOY_REQ}
+                SSH_AUTH_SOCK: /ssh-agent
                 BUN_BIN: ${BUN_BIN_R}
                 SSH_AUTH_SOCK: /ssh-agent
         volumes:
             - ${SSH_AUTH_SOCK:-/dev/null}:/ssh-agent
             - .:/workspace
-            - ~/.config/git/config:/etc/gitconfig
+            - ~/.gitconfig:/etc/gitconfig:ro
         networks:
             - templrjs
+            - ollama
         expose:
             - '${NODE_PORT}'
+
+networks:
+    ollama:
+        name: ollama
+        driver: bridge

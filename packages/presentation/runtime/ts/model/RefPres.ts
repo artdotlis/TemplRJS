@@ -39,12 +39,12 @@ class RefPres {
             this.refConf.style,
             this.refConf.language,
             mergeURIs([this.root, this.refConf.template]),
-            mergeURIs([this.root, this.refConf.local]),
+            mergeURIs([this.root, this.refConf.local])
         )
             .then(() => {
                 this.refHid.innerHTML = formatCitation(
                     this.refConf.template,
-                    this.refConf.language,
+                    this.refConf.language
                 );
                 initRefSlides(this.refHid, this.refCont, this.refConf.refsPerSection);
                 this.refHid.innerHTML = '';

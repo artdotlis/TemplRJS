@@ -12,7 +12,7 @@ const DeckConfig = z.object({
                 dataSeparator: z.string().min(1),
                 dataSeparatorVertical: z.string().min(1),
                 dataSeparatorNotes: z.string().min(1),
-            }),
+            })
         )
         .nonempty(),
     charts: z.array(
@@ -30,7 +30,7 @@ const DeckConfig = z.object({
             ]),
             data: z.string().min(1),
             options: z.any(),
-        }),
+        })
     ),
     citeJs: z.object({
         refsPerSection: z.array(z.number().min(1)),

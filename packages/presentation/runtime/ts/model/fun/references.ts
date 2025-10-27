@@ -5,7 +5,7 @@ import KnownError from '../../constants/known_error';
 
 function refContainerHtml(
     classN: DOMTokenList,
-    sectId: string,
+    sectId: string
 ): [HTMLElement, HTMLElement] {
     const newSection = document.createElement('section');
     newSection.classList.add(...classN, ClassHtml.noFooter);
@@ -24,7 +24,7 @@ function addRefLines(
     con: HTMLElement,
     limiter: number,
     curI: number,
-    hiddenRefs: Element[],
+    hiddenRefs: Element[]
 ): [number, RefMap] {
     const refMap: RefMap = {};
     let glL = 0;
@@ -49,7 +49,7 @@ function addRefLines(
 function parseReferences(
     rps: number[],
     hiddenRefs: Element[],
-    slides: HTMLElement,
+    slides: HTMLElement
 ): RefMap {
     let refMap: RefMap = {};
     let runId = 0;
@@ -82,7 +82,7 @@ function initRefSlides(container: HTMLElement, slides: HTMLElement, rps: number[
     }
     if (resMap.unknown !== undefined) {
         throw new KnownError(
-            'some references are missing a valid id or a wrong was window given',
+            'some references are missing a valid id or a wrong was window given'
         );
     }
     window.RefMap = resMap;
@@ -103,8 +103,7 @@ function replaceRefPr(): void {
     const interval = setInterval(() => {
         if (window.RefMap === undefined || window.Slides === undefined) {
             console.log('waiting for references to load!');
-        }
-        else {
+        } else {
             replaceRef();
             console.log('references replaced!');
             clearInterval(interval);

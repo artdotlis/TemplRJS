@@ -18,7 +18,7 @@ function addFooterLogo(
     foot: HTMLElement,
     root: string,
     logoP: string,
-    logoCl: string,
+    logoCl: string
 ): void {
     if (logoP.length > 0) {
         const footer = document.createElement('div');
@@ -37,8 +37,7 @@ function checkNoFooterPdf(): void {
     for (const pdf of pdfSlides) {
         if (pdf.querySelector(`#${IdHtml.loading}`) !== null) {
             toDel.push(...pdf.querySelectorAll(`.${ClassHtml.presBgFt}`));
-        }
-        else if (pdf.querySelector(`.${ClassHtml.noFooter}`) !== null) {
+        } else if (pdf.querySelector(`.${ClassHtml.noFooter}`) !== null) {
             toDel.push(...pdf.querySelectorAll(`.${ClassHtml.presBgFt}`));
         }
     }
@@ -51,13 +50,13 @@ function addFooterPdf(
     root: string,
     logoPl: string,
     logoPr: string,
-    footerText: string,
+    footerText: string
 ): void {
     const bgs = document.querySelectorAll(`.${ClassHtml.presBg}`);
     const footerCon = document.createElement('div');
     footerCon.className = ClassHtml.presBgFt;
-    const bgFtAll
-        = document.querySelectorAll(`.${ClassHtml.presBg} .${ClassHtml.presBgFt}`) ?? [];
+    const bgFtAll =
+        document.querySelectorAll(`.${ClassHtml.presBg} .${ClassHtml.presBgFt}`) ?? [];
     for (const bgFt of bgFtAll) {
         bgFt.remove();
     }
@@ -76,7 +75,7 @@ function addFooterSlide(
     root: string,
     logoPl: string,
     logoPr: string,
-    footerText: string,
+    footerText: string
 ): void {
     const slide = reveal.getCurrentSlide();
     const slideBg = slide.slideBackgroundElement;
@@ -104,7 +103,7 @@ function addFooter(
     root: string,
     logoPl: string,
     logoPr: string,
-    footerText: string,
+    footerText: string
 ): void {
     if (window.RevealJs === undefined) {
         throw new KnownError('not a pres window');
@@ -115,10 +114,9 @@ function addFooter(
             { keyCode: 70, key: 'F', description: 'add pdf footer' },
             (): void => {
                 addFooterPdf(root, logoPl, logoPr, footerText);
-            },
+            }
         );
-    }
-    else {
+    } else {
         window.RevealJs.on('slidechanged', () => {
             addFooterSlide(pres, root, logoPl, logoPr, footerText);
         });

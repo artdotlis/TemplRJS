@@ -17,8 +17,7 @@ window.bootstrap = (): void => {
     try {
         new ProjectConf().init();
         new IndCtrl().init();
-    }
-    catch (err) {
+    } catch (err) {
         if (err instanceof KnownError) {
             alert(err);
         }
