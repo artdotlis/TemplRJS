@@ -9,8 +9,7 @@
                 "christian-kohler.path-intellisense",
                 "Gruntfuggly.todo-tree",
                 "aaron-bond.better-comments",
-                "tamasfe.even-better-toml",
-                "Vue.volar"
+                "tamasfe.even-better-toml"
             ]
         }
     },
