@@ -129,6 +129,9 @@ function createDefaultServer(): PreviewOptions | ServerOptions {
         strictPort: true,
         fs: { strict: false },
         hmr: {
+            protocol: 'ws',
+            host: 'localhost',
+            port: getNginxPort(),
             clientPort: getNginxPort(),
             path: '/_ws',
         },
